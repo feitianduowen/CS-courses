@@ -99,7 +99,7 @@ $m\in\mathbb{Z}^+$. $a ≡ b (\mod m) \land c ≡ d
     $m\in\mathbb{Z}^+$.  
 $ac ≡ bc (\mod m) \land (\gcd(c, m) = 1) \to a ≡ b (\mod m)$
 16. **Theorem**:  
-$\gcd(a,m)=1\land m>1\to\exists$a模m的逆元，  
+$\gcd(a,m)=1\land m>1\to\exists$ a模m的逆元，  
 且该逆元在模m定义下唯一
 17. **Theorem**:  
-d=gcd(a,m). ax$\equiv$b(mod m)有解$\leftrightarrow$d|b,且在$\mathbb{Z}_m$中解的个数为d  
+d=gcd(a,m). ax $\equiv$ b(mod m)有解 $\leftrightarrow$ d|b,且在 $\mathbb{Z}_m$ 中解的个数为d  
