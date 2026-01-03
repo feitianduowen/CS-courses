@@ -1,6 +1,6 @@
-# CS201 Note
+CS201 Note
 
-## 04 Complexity of Algorithms
+# 04 Complexity of Algorithms
 
 1. $$|f(x)| \leq C|g(x)| \Rightarrow f(x) = O(g(x))$$  
    $$\log n! = O(n \log n)$$  
