@@ -33,15 +33,16 @@
 
 11. **NP 难问题**：由至少与 NP 完全问题一样困难的判定问题组成。不一定属于 NP
 
+
 ![NP-hardness - Wikipedia](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/P_np_np-complete_np-hard.svg/1200px-P_np_np-complete_np-hard.svg.png)
 
 # 05 Number Theory and Cryptography
 
 1. a|b: b能被a整除
 
-2.  $ab\mod m=(𝑎\mod m)(𝑏\mod m)\mod m$
+2. $ab\mod m=(𝑎\mod m)(𝑏\mod m)\mod m$
 
-3.  $a_{+m}b=(a+b)\mod m$,    $a_{\cdot m}b=(a\cdot b)\mod m$
+3. $a_{+m}b=(a+b)\mod m$,    $a_{\cdot m}b=(a\cdot b)\mod m$
 
    Modular Arithmetic Properties
 
@@ -101,7 +102,9 @@
    return x{x equals b^n mod m}
    ```
 
-8. **Fundamental Theorem of Arithmetic** 算术基本定理 （任何不小于的整数都能唯一地写做质数或多个质数的积）
+8. **Fundamental Theorem of Arithmetic** 算术基本定理 
+
+   任何不小于2的整数都能唯一地写做质数或多个质数的积
 
 9. **Theorem**: n 是合数(composite) $\to$ n 至少有一个 prime divisor $\leq\sqrt{n}$
 
@@ -129,7 +132,7 @@
 > - For any d such that d | b and d | r, d also divides b · q + r = a.
 >   Hence, any common divisor of b and r must also be a common
 >   divisor of a and b. This implies gcd(a, b) ≥ gcd(b, r).
-> - Therefore, gcd(a, b) = gcd(b, r).
+> - Therefore, $\gcd(a, b) = \gcd(b, r)$.
 
 13. **Bézout’s Theorem**
     $a,b\in\mathbb{Z}^+\to\exists s\exists t(\gcd(a, b) = s · a + t · b)$.
@@ -148,12 +151,12 @@
     $\gcd(a,m)=1\land m>1\to\exists$ a模m的逆元，
     且该逆元在模m定义下唯一
 17. **Theorem**:
-    $d=\gcd(a,m)$. $ax \equiv b(\mod m)$有解 $\Leftrightarrow$ d|b,且在 $\mathbb{Z}_m$ 中解的个数为d
+    $d=\gcd(a,m)$. $ax \equiv b\pmod m$有解 $\Leftrightarrow$ d|b,且在 $\mathbb{Z}_m$ 中解的个数为d
 
 > 此处省略证明，记得看
 
 18. **中国剩余定理**
-    
+
     设 $m_1, m_2, \dots, m_k$ 是 **两两互质** 的正整数。对于任意整数 $a_1, a_2, \dots, a_k$，同余方程组：
     $$
     \begin{cases}
@@ -164,20 +167,24 @@
     \end{cases}
     $$
     $M = m_1 m_2 \cdots m_k$  
-    
+
     $M_i = \frac{M}{m_i}$  
-    
+
     $M_i$ 模 $m_i$ 的乘法逆元 $t_i$（即满足 $M_i \cdot t_i \equiv 1 \pmod{m_i}$）
-    
+
     存在一个整数 $x$（在 $0$ 到 $M-1$ 之间）满足所有方程，并且所有解在模 $M$ 下同余：  
     $$
     x \equiv a_1 M_1 t_1 + a_2 M_2 t_2 + \cdots + a_k M_k t_k \pmod{M}
     $$
 
 19. **费马小定理**: p质， $p\nmid a\to a^{p-1}\equiv1\pmod p$
+
 20. **欧拉定理**:  $ a,n\in\mathbb{Z}^+ $ 互质 $ \to a^{\phi(n)}\equiv1\pmod n $
+
 21. **模素数的原根**:  模素数p的一个原根是一个整数r $ \in\mathbb{Z}_p $ ,使得 $ \mathbb{Z}_p $ 中每个非零元素都是r模p的幂
+
 22. **Theorem**:  存在模n( $n\geq2$ ) $\leftrightarrow$ $n=2,4,p^k,2p^k$ , p是奇素数， $ k\in\mathbb{Z}^+ $
+
 23. **Hash collisions**:
 
 - move to the next available hash value
@@ -260,7 +267,7 @@ $$
    $$
    p(n;H):=1-\Pi_{i=1}^{n-1}(1-\frac iH)\\n(p;H)\approx\sqrt{2H\ln\frac1{1-p}}
    $$
-   
+
 4. $$
    \sum_{k=0}^n(_k^n)=2^n
    $$
@@ -269,7 +276,7 @@ $$
    $$
    (_k^n)=(^{n-1}_{k-1})+(^{n-1}_{\;\;k})
    $$
-   
+
 6. **The Binomial Theorem**:
    $$
    \sum_{k=0}^n(_k^n)x^{n-k}y^k=(x+y)^n
@@ -279,8 +286,14 @@ $$
    $$
    |\cup_{i=1}^nE_i|=\sum_{k=1}^n(-1)^{k+1}\sum_{1\le i_1\le i_2\le...\le i_k\le n}|E_{i_1}\cap E_{i_2}\cap...\cap E_{i_k}|
    $$
-   
-8. 
+
+8. 设特征方程 $r^k - c_1 r^{k-1} - \cdots - c_k = 0$ 有 $t$ 个不同的根 $r_1, \dots, r_t$，重数分别为 $m_1, \dots, m_t$，其中 $m_i \geq 1$ 且 $m_1 + \cdots + m_t = k$。那么
+   $$
+   a_n = \sum_{i=1}^t \left( \sum_{j=0}^{m_i-1} \alpha_{i,j} n^j \right) r_i^n, \quad n \geq 0,
+   $$
+   其中 $\alpha_{i,j}$ 是常数。
+
+9. 
 
 $$(1 + x)^n = \sum_{k=0}^n C(n, k)x^k$$
 
@@ -320,7 +333,7 @@ $$
 
 
 
-# 08
+# 08 Relations
 
 1. 从一个 n 元集 A 到一个 m 元集 B，存在$2^{nm}$个二元关系。
 
@@ -399,14 +412,15 @@ $$
     ```
 
 
-# 09 note
+# 09 Graphs and Trees
 
 1.  An undirected graph has an **even** number of vertices of **odd** degree
 2.  $ G $ is a directed graph $\Rightarrow$  $  |E| = \sum_{v \in V} \deg^{-}(v) = \sum_{v \in V} \deg^{+}(v)$
+
 > This theorem applies even if multiple edges and loops are present.  
 
 3. A simple graph G is **bipartite** $\Leftrightarrow$ $\chi(G)\le2$
-   
+
 4. **Hall’s Marriage Theorem**: 
 
   The **bipartite** graph has a **injective** function from $ V_1 $ to $ V_2 $  $\Leftrightarrow$ $ |N(A)| \geq |A| $ for all subsets $ A $ of $ V_1 $  
@@ -438,49 +452,44 @@ $$
   >     > note that “|N(A)| ≥ |A| for all subsets A of V1” = Case 1 + Case 2
 
 5. The graph isomorphism problem is in **NP**, but is not known to be 
-    either in P or in NP-complete. 
+   either in P or in NP-complete. 
 
 6. Finding $\chi(G)$ of an arbitrary graph G (graph coloring problem) is **NP-hard**.  
 
 7. the **Hamilton** path problem and Hamilton circuit problem are **NP-complete**.
 
-9. **Euler’s Formula**: 
+8. **Euler’s Formula**: 
 
-    a connected planar simple graph G = (V, E) has $f$ faces $\Rightarrow$ $  |V| - |E| + f = 2 $  
+   a connected planar simple graph G = (V, E) has $f$ faces $\Rightarrow$ $  |V| - |E| + f = 2 $  
 
-10.  a **connected planar simple** graph with $|V| \ge 3 \Rightarrow$   **$  |E| \leq 3|V| - 6 $**
-    
-11. a tree with at least two vertices $\Rightarrow  |E| = |V| - 1 $
+9. a **connected planar simple** graph with $|V| \ge 3 \Rightarrow$   **$  |E| \leq 3|V| - 6 $**
 
-12. A graph G = (V, E) is a tree  $\Leftrightarrow$ 
+10. A graph G = (V, E) is a tree  $\Leftrightarrow$ 
+
 - it is **connected** and **acyclic** and **|E| = |V| - 1**(三选一)
 - it has exactly one simple path between any two of its vertices.
 - it is connected, and the removal of any edge disconnects the graph.
-12. A full binary tree with n internal vertices has
-    $  2n + 1 $ vertices and $n + 1$ leaves. 
 
-13. A connected graph G has an **Euler circuit**  $\Leftrightarrow$ every vertex of G has even degree. 
+12. A connected graph G has an **Euler circuit**  $\Leftrightarrow$ every vertex of G has even degree. 
 
     A directed graph G has an **Euler circuit**  $\Leftrightarrow$
 
 - G is **strongly connected**, and
-- for every vertex v of G, **deg+(v) = deg-(v)**  
+- for every vertex v of G, **$deg^+(v) = deg^-(v)$**  
 
 14. A connected graph G has an **Euler trail** but not an Euler
     circuit  $\Leftrightarrow$ G has exactly two vertices of odd degree.
 
-15. $\forall$ V的非空子集S, # connected components of $G - S \leq |S| \Leftrightarrow$ A connected **multigraph** G has a **Hamiltonian circuit**
+15. **Dirac’s Theorem**: a simple graph G with $|V| = n \ge 3$, $\forall v\in V (\deg(v)\ge n/2)\Rightarrow$ G has a **Hamiltonian circuit**.
 
-16. **Dirac’s Theorem**: a simple graph G with $|V| = n \ge 3$, $\forall v\in V (\deg(v)\ge n/2)\Rightarrow$ G has a **Hamiltonian circuit**.
-
-17. **Ore’s Theorem**: a simple graph G with $|V| = n \ge 3$,   
+16. **Ore’s Theorem**: a simple graph G with $|V| = n \ge 3$,   
 
     $\forall u,v(Nonadj(u,v)\to \deg(u) + \deg(v) \ge n)$ $\Rightarrow$ G has a **Hamiltonian circuit**.
 
-18. There is a simple path between every pair of distinct 
+17. There is a simple path between every pair of distinct 
     vertices of a strongly connected directed graph. 
 
-19. 
+18. 
 
 ```pseudocode
 procedure Euler(G: connected multigraph with all vertices of even degree)
@@ -499,6 +508,7 @@ while H has edges
 
 return circuit {circuit is an Euler circuit}
 ```
+
 find an arbitrary circuit C
 
 *why always possible?*
@@ -512,26 +522,28 @@ $ C $ and $ C' $ share some vertex
 $H = H - C'$
 
 $C = C + C'$
-25.  A **planar** graph has a vertex of degree at most **5**. 
-26. G is a connected **planar** simple graph, $|V|\ge 3$ vertices, and has no circuits of length 3, 
+
+19. A **planar** graph has a vertex of degree at most **5**. 
+
+20. G is a connected **planar** simple graph, $|V|\ge 3$ vertices, and has no circuits of length 3, 
     $\Rightarrow$ $|E| \le 2|V| − 4$.
-27. a graph is **planar**, so will be any graph obtained by 
+21. a graph is **planar**, so will be any graph obtained by 
     removing an edge {u, v} and adding a new vertex w together 
     with edges {u, w} and {w, v}. Such an operation is called an 
     **elementary subdivision**. 
-28. **Kuratowski’s Thereom**: A graph is **nonplanar**  $\Leftrightarrow$ it 
+22. **Kuratowski’s Thereom**: A graph is **nonplanar**  $\Leftrightarrow$ it 
     contains a subgraph **homeomorphic** to $K_{3,3}$ or $K_5$.
-29. A full $ m $-ary tree with  
+23. A full $ m $-ary tree with  
     (i) $ n $ vertices  
     has $ i = (n - 1)m $ internal vertices and $ \ell = [(m - 1)n + 1]m $ leaves,  
     (ii) $ i $ internal vertices  
     has $ n = mi + 1 $ vertices and $ \ell = (m - 1)i + 1 $ leaves,  
     (iii) $ \ell $ leaves  
     has $ n = (m\ell - 1)(m - 1) $ vertices and $ i = (\ell - 1)(m - 1) $ internal vertices.
-30. There are $\leq m^h$ leaves in an $ m $-ary tree of height $ h $.
-31. Consider any $ m \geq 2 $. an $ m $-ary tree of height $ h $ has $\ell$ leaves $\Rightarrow$ $ h \geq \lceil \log_{m}\ell \rceil $. the $ m $-ary tree is full and balanced $\Rightarrow$ $ h = \lceil \log_{m}\ell \rceil $
-32.  A simple graph is **connected**  $\Leftrightarrow$ it has a **spanning** tree.
-33. **procedure** $ DFS(G $: connected graph with vertices $ v_1, v_2, \ldots, v_n $ )  
+24. There are $\leq m^h$ leaves in an $ m $-ary tree of height $ h $.
+25. Consider any $ m \geq 2 $. an $ m $-ary tree of height $ h $ has $\ell$ leaves $\Rightarrow$ $ h \geq \lceil \log_{m}\ell \rceil $. the $ m $-ary tree is full and balanced $\Rightarrow$ $ h = \lceil \log_{m}\ell \rceil $
+26. A simple graph is **connected**  $\Leftrightarrow$ it has a **spanning** tree.
+27. **procedure** $ DFS(G $: connected graph with vertices $ v_1, v_2, \ldots, v_n $ )  
     $ T := $ tree consisting only of the vertex $ v_1 $  
     $ visit(v_1) $
 
