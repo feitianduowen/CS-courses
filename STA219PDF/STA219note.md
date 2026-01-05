@@ -17,57 +17,59 @@ $$
    \frac{\partial f_2}{\partial x} & \frac{\partial f_2}{\partial y}
    \end{bmatrix}.
    $$
+
 3. $d\tan x=\sec^2x$
-   
+
    $d\sec x=\sec x\tan x$
-   
+
    $d\cot x=-\csc^2x$
-   
+
    $d\csc x=-\csc x\cot x$
-   
+
    $d\sin^{-1}x=\frac{1}{\sqrt{1-x^2}}$
-   
+
    $d\cos^{-1}x=-\frac{1}{\sqrt{1-x^2}}$
-   
+
    $d\tan^{-1}x=\frac{1}{1+x^2}$
+
 4. Taylor series
-   
+
    $$
    \frac{1}{1-x}
     = 1 + x + x^2 + \cdots + x^n + \cdots
     = \sum_{n=0}^{\infty} x^n,\qquad |x|<1.
    $$
-   
+
    $$
    \frac{1}{1+x}
     = 1 - x + x^2 - \cdots + (-x)^n + \cdots
     = \sum_{n=0}^{\infty} (-1)^n x^n,\qquad |x|<1.
    $$
-   
+
    $$
    e^{x}
     = 1 + x + \frac{x^{2}}{2!} + \cdots + \frac{x^{n}}{n!} + \cdots
     = \sum_{n=0}^{\infty} \frac{x^{n}}{n!},\qquad x\in\mathbb{R}.
    $$
-   
+
    $$
    \sin x
     = x - \frac{x^{3}}{3!} + \frac{x^{5}}{5!} - \cdots + (-1)^n\frac{x^{2n+1}}{(2n+1)!} + \cdots
     = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n+1}}{(2n+1)!},\qquad x\in\mathbb{R}.
    $$
-   
+
    $$
    \cos x
     = 1 - \frac{x^{2}}{2!} + \frac{x^{4}}{4!} - \cdots + (-1)^n\frac{x^{2n}}{(2n)!} + \cdots
     = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n}}{(2n)!},\qquad x\in\mathbb{R}.
    $$
-   
+
    $$
    \ln(1+x)
     = x - \frac{x^{2}}{2} + \frac{x^{3}}{3} - \cdots + (-1)^{n-1}\frac{x^{n}}{n} + \cdots
     = \sum_{n=1}^{\infty} (-1)^{n-1}\frac{x^{n}}{n},\qquad -1<x\le 1.
    $$
-   
+
    $$
    \tan^{-1}x
     = x-\frac{x^{3}}{3}+\frac{x^{5}}{5}-\cdots+(-1)^n\frac{x^{2n+1}}{2n+1}+\cdots
@@ -94,6 +96,7 @@ $$
 2. $Y=g(X)$, $h(y)=g^{-1}(y)$,
    $\Rightarrow f_Y(y)=\left\{\begin{aligned}|h'(y)|\cdot f_X(h(y)), 在h(y)有定义处\\
    0，否则\end{aligned}\right.$
+
 3. | 分布                   | PDF/PMF                                                      | 期望                | 方差                  |
    | :--------------------- | ------------------------------------------------------------ | ------------------- | --------------------- |
    | 均匀 $(a, b)$          | $f(x) = \begin{cases} \frac{1}{b-a}, & \text{if } a < x < b \\ 0, & \text{otherwise} \end{cases}$ | $\frac{a+b}{2}$     | $\frac{(b-a)^2}{12}$  |
@@ -103,13 +106,17 @@ $$
    | 泊松($\lambda$)        | $p(x)=\frac{\lambda^x}{x!}e^{-\lambda}$                      | $\lambda$           | $\lambda$             |
    | 二项(n,p)              | $p(x)=C_n^xp^x(1-p)^{n-x}$                                   | np                  | np(1-p)               |
    | 伯努利(p)              | $p(x)=p^x(1-p)^{1-x}$                                        | p                   | p(1-p)                |
-   
+
 4. 泊松: 计算在特定时间段内发生 **k** 次事件的概率;
-   
+
    指数: 计算下一个事件发生的时间是否在某个时间点之前
+
 5. 标准化：$Z=\frac{X-\mu}{\sigma}$
+
 6. $E(X)=\int_{-\infty}^{\infty}xf(x)dx$
+
 7. $E(Y)=E(g(X))=\int_{-\infty}^{\infty}g(x)f(x)dx$
+
 8. $\text{Var(X)}=E(X-E(X))^2=E(X^2)-[E(X)]^2=\int_{-\infty}^{\infty}[x-E(X)]^2f(x)dx$
 
 # 3 Joint Distributions
@@ -194,15 +201,23 @@ $$
     X|Y=y\sim N(\mu_X+\frac{\rho\sigma_X}{\sigma_Y}(y-\mu_Y),(1-\rho^2)\sigma_X^2)
     $$
 
+16. $$
+    X + Y \sim N(\mu_X + \mu_Y, \sigma_X^2 + 2\rho\sigma_X\sigma_Y + \sigma_Y^2)
+    $$
+
+17. ![img](https://deepseek-api-files.obs.cn-east-3.myhuaweicloud.com/raw/82f9/2026/1/5/file-6594da13-ec12-40a2-8d7e-0a3b07fc8b62?response-content-disposition=attachment%3B%20filename%3D%22image.png%22&Expires=1767664702&AccessKeyId=OD83TSXECLFQNNSZ3IF6&Signature=82Ly/cXM2W18msegKgjkwpZ2sCc%3D)
+
+18. $f_{X|Y}(x|y)=\frac{f(x,y)}{f_Y(y)}$
+
 # 4 Monte Carlo Methods
 
-1.  **weak law of large numbers (LLN, 大数定律)**
+1. **weak law of large numbers (LLN, 大数定律)**
 
    - $X_1, X_2, \ldots$ random variables  
-     
+
      $\mu \triangleq E(X_i) < \infty$,  
      $\bar X_n = (X_1 + X_2 + \cdots + X_n)/n$.
-     
+
    - $\bar X_n$ **converges in probability**（依概率收敛）to $\mu$ as $n \to \infty$:
 
      $$\bar X_n \xrightarrow{P} \mu,\quad \text{as } n \to \infty.$$
@@ -210,10 +225,10 @@ $$
    - For any $\varepsilon > 0$,
 
      $$\lim_{n\to\infty} P\left(\left|\frac{1}{n}\sum_{i=1}^n X_i - \mu\right| > \varepsilon\right) = 0.$$
-     
+
    - $\bar X_n\overset{\text{approx.}}{\sim}N(\mu,\frac{\sigma^2}{n})$
 
-2.  **Inverse transformation sampling (逆变换采样)**
+2. **Inverse transformation sampling (逆变换采样)**
 
    若F(x)是某个连续随机变量的分布函数（CDF），且其反函数 $F^{-1}(x)$存在，
     令$U \sim U[0,1]$，则$X = F^{-1}(U) \sim F(x)$.
@@ -268,26 +283,24 @@ $$
    $$
    S^2=\frac1{n-1}\sum_{i=1}^n(X_i-\bar{X})^2
    $$
-   
 
 2. **Sample p-quantile** (样本p分位数)
    $$
    Q_p=\begin{cases} 
-   X_{(np+1)}, & \text{如果 } np \text{ 不是整数} \\ 
-   \frac{X_{(np)} + X_{(np+1)}}{2}, & \text{如果 } np \text{ 是整数}
+   X_{(\lfloor np\rfloor+1)}, & \text{如果 } np \text{ 不是整数} \\ 
+   \frac{X_{(np)}  X_{(np+1)}}{2}, & \text{如果 } np \text{ 是整数}
    \end{cases}
    $$
-   
 
-3. 若$\forall\theta\in\Theta$, $E_\theta(\hat\theta_l)=\theta_l$, 则 $\hat\theta_l$ 是$\theta$的**无偏估计量**, 否则是**有偏估计量**. $E_\theta(\hat\theta_l)-\theta_l$是偏差. 若偏差不为0但收敛为0($n\to\infty$), 则 $\hat\theta_l$是 $\theta$ **渐近无偏估计量**
+3. 若$\forall\theta\in\Theta$, $E_\theta(\hat\theta_l)=\theta_l$, 则 $\hat\theta_l$ 是$\theta$的**无偏估计量**, 否则是**有偏估计量**. $E_\theta(\hat\theta_l)-\theta_l$是偏差. 若偏差不为0但收敛为0($n\to\infty$), 则 $\hat\theta_l$是 $\theta$ **渐近无偏估计量**（asymptotic unbiased estimator）
 
 4. 如果对于 ∀𝜃∈Θ和 ∀𝜖>0，我们有
    $$
    \lim_{n\to\infty}P_\theta(|\hat\theta_i-\theta_i|>\epsilon)=0
    $$
-   
 
-   那么$\hat\theta_i$称为$\theta_i$的一个**相合估计量**。
+
+   那么$\hat\theta_i$称为$\theta_i$的一个**相合估计量**（consistent estimator）。
 
 5. 
 
@@ -296,17 +309,24 @@ $$
 
 6. 如果$\hat\theta$ 是$\theta$的一个渐近无偏估计量，并且当$n\to\infty$ 时$Var(\hat\theta)\to0$，那么$\hat\theta$是$\theta$的一个相合估计量
 
-7. **切比雪夫不等式**
+7. 对于$U(0,\theta)$, 
+   $$
+   f_{X_{(k)}}(x)=\frac{x^{k-1}(\theta-x)^{n-k}n!}{\theta^n(k-1)!(n-k)!},0\le x\le\theta\\
+   E(X_{(k)})=\int_{-\infty}^{\infty}xf_{max}(x)dx=\frac{k\theta}{n+1}\\
+   Var(X_{(k)})=\frac{k(n-k+1)}{(n+1)^2(n+2)}\theta^2
+   $$
+
+8. **切比雪夫不等式**
 
    Let X be a random variable with mean 𝜇 = E(X) and variance $\sigma ^2$ = Var(X) both exists, then
    $$
    P(|X-\mu|\ge k\sigma)\le\frac1{k^2}
    $$
 
-8. No matter what is the population distribution, if the population mean $\mu=E(X)$ and population
+9. No matter what is the population distribution, if the population mean $\mu=E(X)$ and population
    variance $\sigma=Var(X)$ exist, then $\hat\mu=\bar X$ and $\hat\sigma^2=S$ are consistent estimators of $\mu$ and $\sigma ^2$  
 
-9.  **总体𝑘阶矩**: $\mu_k=E(X^k)$    
+10. **总体𝑘阶矩**: $\mu_k=E(X^k)$    
 
    **样本𝑘阶矩**: $M_k=\frac1n\sum_{i=1}^nX^k_i$  
 
@@ -314,9 +334,9 @@ $$
 
    **样本𝑘阶中心矩**: $\tilde M_k=\frac1n\sum_{i=1}^n(X_i-\bar X)^k$  
 
-10. 一个参数的矩估计量可能不是唯一的。
+11. 一个参数的矩估计量可能不是唯一的。
 
-11. **似然函数**: 
+12. **似然函数**: 
     $$
     L(\theta;x_1,
      ,...,x_n)=\Pi_{i=1}^nf(x_i;\theta),\theta\in\Theta.
@@ -337,28 +357,28 @@ $$
     \ell(\theta; x) = \log L(\theta; x) = \sum_{i=1}^n \log f(x_i; \theta).
     $$
 
-12. - 在温和的正则条件下，矩估计量和极大似然估计量都是相合且渐近无偏的估计量。
+13. - 在温和的正则条件下，矩估计量和极大似然估计量都是相合且渐近无偏的估计量。
     - 在温和的正则条件下，对于大样本，极大似然估计量具有近似正态分布。这个性质称为**渐近正态性** (**渐近正态性**)。
 
-13. | 分布              | 似然函数                                                     | 对数似然函数                                                 | 极大似然估计量                                               |
+14. | 分布              | 似然函数                                                     | 对数似然函数                                                 | 极大似然估计量                                               |
     | ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-    | $U(0,\theta)$     | $\frac1{\theta^n}$                                           | $-n\log n$                                                   | $X_{(n)}$                                                    |
-    | $N(\mu,\sigma^2)$ | $(\sqrt{2\pi})^{-n} (\sigma^2)^{\frac{n}{2}} e^{-\frac{1}{2\sigma^2} \sum_{i=1}^n (x_i - \mu)^2}$ | $-n \log (\sqrt{2\pi}) - \frac{n}{2} \log (\sigma^2) - \frac{1}{2\sigma^2} \sum_{i=1}^n (x_i - \mu)^2$ | $\hat\mu=\bar{X}, \hat{\sigma}^2 = \frac{1}{n} \sum_{i=1}^n (X_i - \bar{X})^2 = \hat{S}^2$ |
+    | $U(0,\theta)$     | $\frac1{\theta^n}$                                           | $-n\log\theta$                                               | $X_{(n)}$                                                    |
+    | $N(\mu,\sigma^2)$ | $(\sqrt{2\pi})^{-n} (\sigma^2)^{-\frac{n}{2}} e^{-\frac{1}{2\sigma^2} \sum_{i=1}^n (x_i - \mu)^2}$ | $-n \log (\sqrt{2\pi}) - \frac{n}{2} \log (\sigma^2) - \frac{1}{2\sigma^2} \sum_{i=1}^n (x_i - \mu)^2$ | $\hat\mu=\bar{X}, \hat{\sigma}^2 = \frac{1}{n} \sum_{i=1}^n (X_i - \bar{X})^2 = \hat{S}^2$ |
 
     
 
-14. 对于 $\forall \alpha \in (0, 1)$，如果存在两个统计量 $\hat{\theta}_{11}(X_1, ..., X_n)$ 和 $\hat{\theta}_{12}(X_1, ..., X_n)$ 使得  
+15. 对于 $\forall \alpha \in (0, 1)$，如果存在两个统计量 $\hat{\theta}_{11}(X_1, ..., X_n)$ 和 $\hat{\theta}_{12}(X_1, ..., X_n)$ 使得  
 
     $$
     P_\Theta(\hat{\theta}_{11} < \theta_i < \hat{\theta}_{12}) \geq 1 - \alpha, \forall \Theta \in \Theta,
     $$
      那么 $(\hat{\theta}_{i1}, \hat{\theta}_{i2})$ 称为 $\theta_i$ 的一个置信水平为 $1 - \alpha$ 的**置信区间**（置信水平为 $1 - \alpha$ 的置信区间），或简称为一个 $100(1 - \alpha)\%$ 置信区间。
 
-15. $X\sim N(\mu,\sigma ^2)$, $P(\bar X-c_1<\mu<\bar X+c_2)=1-\alpha$, $\bar X\sim   N(\mu, \frac{\sigma^2}n)$  
+16. $X\sim N(\mu,\sigma ^2)$, $P(\bar X-c_1<\mu<\bar X+c_2)=1-\alpha$, $\bar X\sim   N(\mu, \frac{\sigma^2}n)$  
 
     $c_1=c_2=z_{\alpha/2}\frac\sigma{\sqrt{n}}$,  $z_{\alpha/2}$是标准正态分布的上$\alpha/2$分位点。
 
-16. $X\sim N(\mu,\sigma ^2)$, 如果$\sigma ^2$未知，求$\mu$的置信区间. 
+17. $X\sim N(\mu,\sigma ^2)$, 如果$\sigma ^2$未知，求$\mu$的置信区间. 
     $$
     1-\alpha=P(\mu-c_2<\bar X<\mu+c_1)=P(-\frac{\sqrt nc_2}S<T<\frac{\sqrt nc_1}S)\\
     T=\frac{\bar X-\mu}{S/\sqrt n}
@@ -367,20 +387,58 @@ $$
 
     **大样本置信区间**: $( \overline{X} - z_{\alpha/2} \frac{S}{\sqrt{n}}, \overline{X} + z_{\alpha/2} \frac{S}{\sqrt{n}}).$  
 
-17. - $\hat{\theta}_i(X_1, \ldots, X_n)$ 是 $\theta_i$ 的一个无偏估计量，且 $\hat{\theta}_i$ 的标准差为 $\sigma(\hat{\theta}_i) = SD(\hat{\theta}_i)$（称为 $\hat{\theta}_i$ 的标准误差（标准误差））。
+18. - $\hat{\theta}_i(X_1, \ldots, X_n)$ 是 $\theta_i$ 的一个无偏估计量，且 $\hat{\theta}_i$ 的标准差为 $\sigma(\hat{\theta}_i) = SD(\hat{\theta}_i)$（称为 $\hat{\theta}_i$ 的标准误差（标准误差））。
 
     - 如果 $\hat{\theta}_i$ 精确服从正态分布，即 $\hat{\theta}_i \sim N(\theta_i, \sigma^2(\hat{\theta}_i))$，并且 $\sigma^2(\hat{\theta}_i)$ 不依赖于任何未知参数，那么 $\theta_i$ 的一个精确 $100(1 - \alpha)\%$ 置信区间为
+
     $$
     \hat{\theta}_i \pm z_{\alpha/2}\sigma(\hat{\theta}_i) = (\hat{\theta}_i - z_{\alpha/2}\sigma(\hat{\theta}_i), \hat{\theta}_i + z_{\alpha/2}\sigma(\hat{\theta}_i)).
     $$
 
     - 如果 $\hat{\theta}_i$ 的 $N(\theta_i, \sigma^2(\hat{\theta}_i))$ 或 $\sigma^2(\hat{\theta}_i)$ 依赖于未知参数且 $\sigma^2(\hat{\theta}_i)$ 是 $\sigma^2(\hat{\theta}_i)$ 的一个相合估计量，那么 $\theta_i$ 的一个大样本 $100(1 - \alpha)\%$ 置信区间为
+
     $$
     \hat{\theta}_i \pm z_{\alpha/2}\hat{\sigma}(\hat{\theta}_i) = (\hat{\theta}_i - z_{\alpha/2}\hat{\sigma}(\hat{\theta}_i), \hat{\theta}_i + z_{\alpha/2}\hat{\sigma}(\hat{\theta}_i)).
     $$
 
     - 常用值：$z_{0.10} = 1.282$, $z_{0.05} = 1.645$, $z_{0.025} = 1.960$, $z_{0.01} = 2.326$, $z_{0.005} = 2.576$.
 
-# 6
+# 6  假设检验
 
-1. 
+1. Type I error rate (第I类错误率):$P(X\in RR|H_0 \text{ is true})$
+   n Type II error rate (第II类错误率): $P(X\notin RR|H_1 \text{ is true})$
+
+2. ![image-20260104174558268](C:\Users\qq275\AppData\Roaming\Typora\typora-user-images\image-20260104174558268.png)
+
+3. **显著性检验**
+
+   - 设 $ X = (X_1, ..., X_n) $ 为来自总体 $ X \sim f(x; \theta_1, ..., \theta_k) $ 的简单随机样本。
+
+   - 对于检验问题 $ H_0: \theta_l \in \Theta_{l0} \leftrightarrow H_1: \theta_l \in \Theta_{l1} $，且对于任意 $ \alpha \in (0, 1) $，如果一个检验的拒绝域 $ RR $ 满足  
+     $  P_\theta(X \in RR) \leq \alpha, \forall \theta \in \Theta$,  其中 $\theta_l \in \Theta_{l0}, \alpha$是最大可接受的第一类错误率
+
+   - 那么该检验称为关于 $ \theta_l $ 的显著性水平为 $ \alpha $ 的显著性检验，或简称为水平为 $ \alpha $ 的检验。
+
+
+4. $p\text{-value} = P(\text{observed or more extreme data}|H_0 \text{ is true)}$
+
+5. $\text{power} = P (X \in RR| H_1\text{ is true}) = 1-\beta$
+
+6. 检验总体均值 $\mu$ 是否等于某值 $\mu_0$。
+
+   $$ T = \frac{\bar{X} - \mu_0}{S / \sqrt{n}} \sim N(0, 1) $$
+
+   - $\bar{X}$: 样本均值
+
+   - $S$: 样本标准差 (若总体标准差 $\sigma$ 已知则用 $\sigma$)
+
+   - $n$: 样本量
+
+   检验两个独立总体的均值差 $\mu_X - \mu_Y$。
+
+   $$ T = \frac{\bar{X} - \bar{Y}}{\sqrt{\frac{S_X^2}{n} + \frac{S_Y^2}{m}}} \sim N(0, 1) $$
+
+   \*  $n, m$: 两个样本的样本量
+
+7. 
+
